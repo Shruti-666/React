@@ -145,7 +145,7 @@ function getBook(id) {
 
 //Destructing
 
-const book = getBook(2);
+const book = getBook(1);
 // const title = book.title;
 // const author = book.author;
 
@@ -153,10 +153,22 @@ const book = getBook(2);
 
 const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
   book;
-console.log(author, title, genres);
+// console.log(author, title, genres);
 
 // const primaryGenre = genres[0];
 // const secondaryGenre = genres[1];
 
 const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
-console.log(primaryGenre, secondaryGenre, otherGenres);
+// console.log(primaryGenre, secondaryGenre, otherGenres);
+
+const newGenres = [...genres, "epic fantasy"];
+// console.log(newGenres);
+
+// const updatedBook = { ...book, moviePublicationDate: "2001-12-19" };
+// console.log(updatedBook);
+
+//`` -- template literals
+const summary = `${title}, ${pages} --page long book was written by ${author} and publish in ${
+  publicationDate.split("-")[0]
+} `;
+console.log(summary);
